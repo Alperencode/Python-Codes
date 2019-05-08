@@ -10,8 +10,23 @@ for i in dir(liste):
 print("")
 print("APPEND")
 
+print("append() öncesi:",liste)
 liste.append("d")  #  liste += ["d"]
-print(liste)
+print("append() sonrası:",liste)
+
+print("")
+print("POP")
+print("pop öncesi:",liste)
+print("pop uygulanan:",liste.pop()) # argüman olarak index sayısı alır default olarak son elemanı alır
+                                    # ve çıkarttığı elemanı return eder
+print("pop sonrası",liste)
+
+print("")
+print("REMOVE")
+
+print("remove öncesi:",liste)
+liste.remove("b")               # argüman olarak liste elemanını alır fakat return etmez
+print("remove sonrası:",liste)
 
 print("")
 print("İNDEX")
@@ -66,4 +81,69 @@ print(liste)
 
 print("")
 
+print("LEN FONKSİYONU YARATMAK")
+
+print(liste.index(liste[-1]) + 1)  # listenin son index sayısına 1 ekleyerek toplam eleman sayısını buluyoruz
+
+print("")
+
+print("ÖNEMLİ!")
+print("COPY ve Atamanın Farkı".upper())
+
+print("")
+print("X adında bir liste oluşturup içine iki eleman atadım")
+x = list()
+x.append("Alperen")
+y = x
+print("X ve Y'yi eşitledim")
+
+print("")
+print("X'e bir eleman daha ekleyip iki listeyi karşılaştırıyorum:")
+x.append("Zeynep")
+print("x:",x)
+print("y:",y)
+
+print("")
+print("id:",id(x))
+print("id:",id(y))
+
+print("")
+print("X'e Eklediğim eleman iki listeyede eklendi")
+print("Ve aynı zamanda iki liste de hafızada aynı yeri tutuyor")
+print("Yani X ve Y şu an bağlı iki eleman ve ikisininde id'si aynı")
+print("Fakat '.copy()' fonksiyonunu kullanırsak X ve Y arasında bağlantı kurulmayacak")
+print("Dolayısıyla Y sadece copy() fonksiyonunu yazdığımız satırdaki X'i kopyalayacak")
+print("")
+
+print("Q isimli bir liste oluşturuyorum:")
+q = list()
+print("Q listesine 1 eleman ekliyorum:")
+q.append("Alperen")
+print(q)
+
+print("")
+print("Q listesini  Z değişkenine copy() fonksiyonu ile kopyalıyorum")
+z = q.copy()
+print("q:",q)
+print("z:",z)
+
+print("")
+print("Q listesine bir eleman daha ekliyorum ve iki listeyi karşılaştırıyorum:")
+q.append("Zeynep")
+print("q:",q)
+print("z:",z)
+
+print("")
+print("q id:",id(q))
+print("z id:",id(z))
+
+print("")
+print("Gördüğümüz gibi ikisinin arasında herhangi bir bağ kalmadı")
+print("Sadece kopyaladığımız satırdaki elemanları aldı")
+print("Aynı zamanda id'leri değişti yani artık hafızada farklı yerlere sahip")
+
+print("")
+
 print("Writed by Alperen")
+
+print("")
