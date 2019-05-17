@@ -9,15 +9,16 @@ def playagain():
 def gameover():
     print("\n====== You Crashed! ======")
     print("Game Over! \n")
-    again = str(input("Do you wanna play again? \nAnswer: "))
     loop3 = 1
     while loop3 == 1: 
+        again = str(input("Do you wanna play again? \nAnswer: "))
         if(again == "yes"):
             loop3 = 0
             playagain()
         elif(again == "no"):
             loop3 = 0
             print("Goodbye!\n")
+            tmp = sp.call('clear',shell=True)
             quit()
         else:
             print("Please select 'yes' or 'no'")
@@ -27,15 +28,16 @@ def computerwon():
     print("\nComputer cards total:",computer.cards,"\n")
     print("====== Computer Won ======")
     print("Game Over! \n".upper())
-    again = str(input("Do you wanna play again? \nAnswer:"))
     loop3 = 1
     while loop3 == 1: 
+        again = str(input("Do you wanna play again? \nAnswer:"))
         if(again == "yes"):
             loop3 = 0
             playagain()
         elif(again == "no"):
             loop3 = 0
             print("Goodbye!\n")
+            tmp = sp.call('clear',shell=True)
             quit()
         else:
             print("Please select 'yes' or 'no'")
@@ -45,15 +47,16 @@ def draw():
     print("Computer cards total:",computer.cards,"\n")
     print("====== Its Draw! ======".upper())
     print("Game Over! \n")
-    again = str(input("Do you wanna play again? \nAnswer:"))
     loop3 = 1
-    while loop3 == 1: 
+    while loop3 == 1:
+        again = str(input("Do you wanna play again? \nAnswer:")) 
         if(again == "yes"):
             loop3 = 0
             playagain()
         elif(again == "no"):
             loop3 = 0
             print("Goodbye!\n")
+            tmp = sp.call('clear',shell=True)
             quit()
         else:
             print("Please select 'yes' or 'no'") 
@@ -63,20 +66,24 @@ def won():
     print("Your cards total:",player.cards + player.newcard)
     print("Computer cards total:",computer.cards)
     print("====== You Won! ======\n".upper())
-    again = str(input("Do you wanna play again? \nAnswer: "))
     loop3 = 1
     while loop3 == 1: 
+        again = str(input("Do you wanna play again? \nAnswer: "))
         if(again == "yes"):
             loop3 = 0
             playagain()
         elif(again == "no"):
             loop3 = 0
             print("Goodbye!\n")
+            tmp = sp.call('clear',shell=True)
             quit()
         else:
             print("Please select 'yes' or 'no'")  
 
 def main():
+    tmp = sp.call('clear',shell=True)
+    print("\nPlease answer the questions like 'yes' or 'no'\n".upper())
+    time.sleep(1.5)
     tmp = sp.call('clear',shell=True)
     print("\n========= BLACKJACK =========")
     loop6 = 1
@@ -142,12 +149,12 @@ class Player:
         self.cards += Player.newcard
 
 
-#class NewGame:
+class NewGame:
     
-#    counter = 0
-#    def __init__(self,name):
-#        self.name = name      
-#        NewGame.counter +=1
+    counter = 0
+    def __init__(self,name):
+        self.name = name      
+        NewGame.counter +=1
 
 class Computer:
 
