@@ -16,6 +16,10 @@ class Calisan(Birey):
         self.idno = idno
         self.maas = maas
 
+    def zam(self,deger:float):
+        self.maas *= deger
+
+
 class Muhendis(Calisan):
     """isim,soyisim,tcno,idno,maas,yazılım_dilleri,yabancı_diller,program"""
     def __init__(self,isim:str,soyisim:str,tcno:int,idno:int,maas:int,y_dilleri:tuple,yabanciDiller:tuple,bilinenProgramlar:tuple):
@@ -30,6 +34,17 @@ class Muhassebeci(Calisan):
         Calisan.__init__(self,isim,soyisim,tcno,idno,maas)
         self.bilinenProgramlar = bilinenProgramlar
 
-        
-x = Muhendis("Alperen","Ağa",13456,1,8000,("Python",),("İngilizce",),("MC Office",))
+x = Muhendis("Alperen","Ağa",13456,1,8000,("Python","Php","Arduino"),("İngilizce",),("MC Office",))
 y = Muhassebeci("Veli","Yılmaz",654321,2,5000,("CNR",))
+
+print("X'in maaşı:",x.maas)
+x.zam(1.8)
+print("X'in maaşı:",x.maas)
+
+
+
+
+
+
+
+#%%
